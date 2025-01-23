@@ -1,0 +1,15 @@
+# Core dependencies
+langchain>=0.3.0
+langchain-groq>=0.0.1
+python-dotenv>=1.0.0
+
+# Document loading and processing
+pypdf>=3.9.0
+docx2txt>=0.8
+python-pptx>=0.6.21
+unstructured>=0.10.0
+
+# Embeddings and vector stores
+sentence-transformers>=2.2.2
+chromadb>=0.4.0
+
