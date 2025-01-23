@@ -1,0 +1,199 @@
+1. The shortest complete sentence in the English language is "Go!"
+
+2. The first computer programmer was a woman - Ada Lovelace, who wrote the first algorithm for Babbage's Analytical Engine.
+
+3. The word "robot" comes from the Czech word "robota," meaning forced labor.
+
+4. The first car to break the sound barrier was the Thrust SSC, reaching 763 mph in 1997.
+
+5. JavaScript was created in just 10 days by Brendan Eich in 1995.
+
+6. The word "nerd" was first coined by Dr. Seuss in his book "If I Ran the Zoo."
+
+7. The first Ferrari was actually red by accident - it was the default color given by the manufacturer.
+
+8. Python was named after Monty Python, not the snake.
+
+9. The average car contains over 30,000 parts.
+
+10. The word "byte" is a play on "bite," with "bit" being the smaller unit.
+
+11. Shakespeare invented over 1,700 common words we use today.
+
+12. The first computer mouse was made of wood.
+
+13. The Porsche 911 has retained the same basic design since 1963.
+
+14. "Debugging" got its name when Grace Hopper found a moth in a computer relay.
+
+15. The dot over the letter 'i' is called a tittle.
+
+16. Linux's mascot, Tux the penguin, was chosen because Linus Torvalds was once bitten by a penguin.
+
+17. The first BMW cars were actually aircraft engines.
+
+18. The Oxford English Dictionary's first edition took 70 years to complete.
+
+19. The first computer virus was created in 1983 and was called Elk Cloner.
+
+20. The word "car" is derived from the Latin word "carrus" meaning wheeled vehicle.
+
+21. HTML was created by Sir Tim Berners-Lee while working at CERN.
+
+22. The longest word without a vowel in English is "rhythms."
+
+23. Tesla's Model S can be upgraded via software updates, like a smartphone.
+
+24. C++ was originally called "C with Classes."
+
+25. The Mercedes-Benz logo represents the company's dominance over land, sea, and air.
+
+26. The first website is still online at info.cern.ch.
+
+27. "Bookkeeper" is the only word in English with three consecutive double letters.
+
+28. The first computer game was created in 1961 - Spacewar!
+
+29. Volkswagen owns Bentley, Bugatti, Lamborghini, Audi, and Porsche.
+
+30. The QWERTY keyboard layout was designed to slow typists down.
+
+31. "Go" is considered the oldest programming language still in use today.
+
+32. The word "alphabet" comes from the first two letters of the Greek alphabet: alpha and beta.
+
+33. The first car radio was introduced in 1930 by Motorola.
+
+34. Ruby was named after the birthstone of one of the creator's colleagues.
+
+35. The average English speaker knows about 20,000 words.
+
+36. The first computer bug was an actual bug - a moth trapped in a relay.
+
+37. Rolls-Royce makes jet engines as well as luxury cars.
+
+38. SQL was originally called SEQUEL (Structured English Query Language).
+
+39. The shortest war in history lasted 38 minutes between Britain and Zanzibar.
+
+40. The first electric car was built in 1884 by Thomas Parker.
+
+41. The term "software" was first used in print in 1958.
+
+42. The word "hundred" comes from the Old Norse word "hundrath" meaning 120.
+
+43. The Bugatti Veyron's fuel tank holds 100 liters of fuel.
+
+44. Git was created by Linus Torvalds in just 3 days.
+
+45. The @ symbol is called an "arroba" in Spanish.
+
+46. The McLaren F1 used gold foil as a heat shield in its engine bay.
+
+47. The first computer password was created in 1961 at MIT.
+
+48. "Stewardesses" is the longest word that can be typed with just the left hand.
+
+49. Tesla's Cybertruck's exterior is made of the same steel alloy used in SpaceX rockets.
+
+50. PHP originally stood for Personal Home Page.
+
+51. The word "quiz" was allegedly invented by a Dublin theater owner in 1830.
+
+52. The Nintendo company was founded in 1889 as a playing card company.
+
+53. The Lamborghini company started by making tractors.
+
+54. Java was originally designed for interactive television.
+
+55. The longest English word without repeating letters is "uncopyrightable."
+
+56. The first computer mouse had two wheels instead of a ball or optical sensor.
+
+57. BMW's first product was aircraft engines in World War I.
+
+58. Unicode contains a character called "pile of poo" (💩).
+
+59. The word "goodbye" is a contraction of "God be with ye."
+
+60. The first USB flash drive had 8MB of storage.
+
+61. Audi's four rings represent the merger of four companies.
+
+62. Python's name has nothing to do with snake imagery.
+
+63. The word "almost" is the longest in English with all letters in alphabetical order.
+
+64. The first CD was pressed in Germany in 1982.
+
+65. In early programming, 'cookies' were called 'magic cookies.'
+
+66. The word "set" has 464 definitions in the Oxford English Dictionary.
+
+67. The Porsche 911 was originally going to be called the 901.
+
+68. Linux was almost named Freax.
+
+69. The hashtag symbol is technically called an octothorpe.
+
+70. Tesla's Model S can be used as a boat briefly in emergencies.
+
+71. The first version of Windows took two years to develop.
+
+72. "Pneumonoultramicroscopicsilicovolcanoconiosis" is the longest word in English.
+
+73. The first car accident occurred in 1891.
+
+74. The original Apple computer logo featured Isaac Newton.
+
+75. The word "robot" first appeared in a 1920 play.
+
+76. Ferrari produces a maximum of 14 cars per day.
+
+77. The first computer programmer's notes contained what is now called a loop.
+
+78. "Rhythm" is the longest English word without vowels.
+
+79. The first hybrid car was built in 1899.
+
+80. The original Google storage server was made with Lego bricks.
+
+81. "Typewriter" is the longest word you can write using only one row of a keyboard.
+
+82. The Bugatti Veyron's radiators use 10 gallons of water per minute.
+
+83. JavaScript was created in just 10 days.
+
+84. The word "nerd" first appeared in Dr. Seuss's book.
+
+85. The first computer virus was relatively harmless.
+
+86. Rolls-Royce cars are hand-painted.
+
+87. Python was created as a hobby project.
+
+88. The word "queue" is pronounced the same way when the last four letters are removed.
+
+89. Tesla's Model X can dance to music.
+
+90. The first website went live on August 6, 1991.
+
+91. "Pronunciation" is the word most mispronounced in English.
+
+92. The Porsche logo was based on Stuttgart's coat of arms.
+
+93. The term "bug" in computer science predates computers.
+
+94. The shortest domain name is "i.ai".
+
+95. The word "testify" has its origin in men swearing on their testicles.
+
+96. The first computer mouse was wooden.
+
+97. BMW's headquarters is designed to look like four engine cylinders.
+
+98. Ruby was influenced by Perl, Smalltalk, and Python.
+
+99. "Strengths" is the longest one-syllable word in English.
+
+100. The first message sent over the internet was "LO" - it was supposed to be "LOGIN" but the system crashed.
