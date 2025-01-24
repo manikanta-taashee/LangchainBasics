@@ -57,5 +57,5 @@ query_vector_store("chromadb_books",query,embeddings,"mmr",{"k": 3, "fetch_k": 2
 
 # 3. Similarity Search Threshold
 print("------Using Similarity Search Threshold------")
-query_vector_store("chromadb_books",query,embeddings,"similarity_score_threshold",{"k": 3, "threshold": 0.1})
+query_vector_store("chromadb_books",query,embeddings,"similarity_score_threshold",{"k": 3, "score_threshold": 0.1})
 
