@@ -7,6 +7,7 @@ ENV/
 env.bak/
 venv.bak/
 4_rag/db/
+4_rag/db/chromadb_books/
 
 # Python
 __pycache__/
