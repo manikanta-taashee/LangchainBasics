@@ -1,5 +1,5 @@
-from langchain_community.document_loaders import PyPDFLoader
 import os
+from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import CharacterTextSplitter
 
 # Define the directory containing the text file and the persistent directory

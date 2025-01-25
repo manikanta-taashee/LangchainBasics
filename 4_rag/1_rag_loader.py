@@ -1,5 +1,5 @@
-from langchain_community.document_loaders import TextLoader
 import os
+from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import CharacterTextSplitter
 
 # Define the directory containing the text file and the persistent directory
@@ -11,7 +11,7 @@ docs = loader.load()
 
 # print(docs[0].page_content)
 
-text_splitter = CharacterTextSplitter(chunk_size=100, chunk_overlap=0)
+text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
 chunks = text_splitter.split_documents(docs)
 # print(chunks)
 # print(chunks[0].page_content)
