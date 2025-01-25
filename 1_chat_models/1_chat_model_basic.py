@@ -1,6 +1,5 @@
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
-from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, SystemMessage
 
 import os
@@ -11,11 +10,9 @@ if not os.getenv("GROQ_API_KEY"):
 # groq_api_key = os.getenv("GROQ_API_KEY")
 
 
-# client = ChatGroq(temperature=0.9)
-client = ChatOpenAI(temperature=0.8)
+client = ChatGroq(temperature=0.9)
 
 # response = client.invoke("What is the capital of France?")
-
 # print(response.content)
 
 # reponse = client.invoke("Write a 100 words short story about a cat")
@@ -28,5 +25,3 @@ messages = [
 
 response = client.invoke(messages)
 print(response.content)
-
-

@@ -14,6 +14,8 @@ prompt_template = ChatPromptTemplate.from_messages(
         ("human", "List the main features of the product {product_name}."),
     ]
 )
+
+
 def analyse_pros(features):
     pros_template = ChatPromptTemplate.from_messages(
         [
@@ -22,6 +24,7 @@ def analyse_pros(features):
         ]
     )
     return pros_template.format_prompt(features=features)
+
 
 def analyse_cons(features):
     cons_template = ChatPromptTemplate.from_messages(
@@ -32,6 +35,11 @@ def analyse_cons(features):
     )
     return cons_template.format_prompt(features=features)
 
+
+def combine_results(pros, cons):
+    return f"Pros:\n{pros}\n\nCons:\n{cons}"
+
+
 pros_branch_chain = (
     RunnableLambda(lambda x: analyse_pros(x)) | client | StrOutputParser()
 )
@@ -39,9 +47,6 @@ pros_branch_chain = (
 cons_branch_chain = (
     RunnableLambda(lambda x: analyse_cons(x)) | client | StrOutputParser()
 )
-def combine_results(pros, cons):
-    return f"Pros:\n{pros}\n\nCons:\n{cons}"
-
 
 chain = (
     prompt_template
@@ -51,6 +56,5 @@ chain = (
     | RunnableLambda(lambda x: combine_results(x["branches"]["pros"], x["branches"]["cons"]))
 )
 
-
-result = chain.invoke({"product_name":"iPhone 15"})
+result = chain.invoke({"product_name": "iPhone 15"})
 print(result)

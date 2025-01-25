@@ -2,11 +2,9 @@ from dotenv import load_dotenv
 from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 from langchain_groq import ChatGroq
 
-
 load_dotenv()
 
 client = ChatGroq()
-
 
 messages = [
     SystemMessage(content="Solve the following math problem"),
@@ -16,8 +14,7 @@ messages = [
 response = client.invoke(messages)
 print("Answer: ", response.content)
 
-
-#Ai Message
+# Ai Message
 messages = [
     SystemMessage(content="Solve the following math problems"),
     HumanMessage(content="What is 81 divided by 9?"),
@@ -27,4 +24,3 @@ messages = [
 
 response = client.invoke(messages)
 print("Answer: ", response.content)
-

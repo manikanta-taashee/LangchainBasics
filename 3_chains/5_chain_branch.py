@@ -40,13 +40,13 @@ neutral_feedback_template = ChatPromptTemplate.from_messages(
 brances = RunnableBranch(
     (lambda x: "positive" in x.lower(),
      positive_feedback_template | client | StrOutputParser()
-    ),
+     ),
     (lambda x: "negative" in x.lower(),
      negative_feedback_template | client | StrOutputParser()
-    ),
+     ),
     (lambda x: "neutral" in x.lower(),
      neutral_feedback_template | client | StrOutputParser()
-    ),
+     ),
     # Default case when no condition matches
     neutral_feedback_template | client | StrOutputParser()
 )

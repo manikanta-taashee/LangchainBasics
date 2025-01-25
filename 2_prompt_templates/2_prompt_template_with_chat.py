@@ -51,7 +51,7 @@ prompt_template_messages = ChatPromptTemplate.from_messages(messages)
 # take topic as user input
 user_topic = input("Enter the topic: ")
 user_count = input("Enter the number of articles: ")
-prompt = prompt_template_messages.invoke({"topic":user_topic, "article_count":user_count})
+prompt = prompt_template_messages.invoke({"topic": user_topic, "article_count": user_count})
 # print(prompt)
 
 response = client.invoke(prompt)

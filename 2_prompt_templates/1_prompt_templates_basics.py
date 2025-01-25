@@ -38,11 +38,9 @@ from langchain_core.messages import HumanMessage
 # this will work
 messages = [
     ("system", "You are a comedian who tells jokes about {topic}."),
-    HumanMessage(content="Tell me 3 jokes."),
+    HumanMessage(content="Tell me {joke_count} jokes."),
 ]
 
 prompt_template_tuple = ChatPromptTemplate.from_messages(messages)
-prompt = prompt_template_tuple.invoke({"topic":"AI", "joke_count":3})
+prompt = prompt_template_tuple.invoke({"topic": "AI", "joke_count": 3})
 print(prompt)
-
-
