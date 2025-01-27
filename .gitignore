@@ -42,7 +42,6 @@ wheels/
 
 # Logs and databases
 *.log
-*.sqlite
 *.db
 
 # Distribution / packaging
