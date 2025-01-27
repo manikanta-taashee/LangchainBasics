@@ -11,21 +11,40 @@ from langchain.prompts import (
 from langchain.schema import SystemMessage
 
 from dotenv import load_dotenv
-from langchain.agents import OpenAIFunctionsAgent, AgentExecutor,create_openai_functions_agent,create_tool_calling_agent
-from tools.sql import run_query_tool
+from langchain.agents import  AgentExecutor,create_tool_calling_agent
+from tools.sql import run_query_tool, list_tables, describe_tables_tool
 load_dotenv()
 
-llm = ChatOpenAI(
-    model="gpt-4o-mini",
-    temperature=0,
-)
-prompt = ChatPromptTemplate.from_messages([
-    SystemMessage(content="You are a helpful assistant that can run SQL queries"),
-    HumanMessagePromptTemplate.from_template("{input}"),
-    MessagesPlaceholder(variable_name="agent_scratchpad")
-])
+# llm = ChatOpenAI(
+#     model="gpt-4o-mini",
+#     temperature=0,
+# )
 
-tools = [run_query_tool]
+
+# Initialize the Language Model using Groq
+# temperature=0.7 provides a good balance between creativity and accuracy
+llm = ChatGroq(
+    model="llama3-70b-8192",
+    temperature=0.7,
+    # model="mixtral-8x7b-32768"
+)
+
+tables = list_tables()
+
+prompt = ChatPromptTemplate(
+    messages=[
+        SystemMessage(content=(
+            "You are an AI that has access to a SQLite database.\n"
+            f"The database has tables of: {tables}\n"
+            "Do no make any assumptions about what tables exist or what columns exist.\n"
+            "If you need to describe a table, use the describe_tables tool.\n"
+            "If you need to run a SQL query, use the run_sqlite_query tool.\n"
+        )),
+        HumanMessagePromptTemplate.from_template("{input}"),
+        MessagesPlaceholder(variable_name="agent_scratchpad")
+    ]
+)
+tools = [run_query_tool, describe_tables_tool]
 
 agent = create_tool_calling_agent(
     llm=llm,
@@ -39,4 +58,4 @@ agent_executor = AgentExecutor(
     verbose=True,
 )
 
-agent_executor.invoke({"input": "How many open orders are there?"})
+agent_executor.invoke({"input": "How many users dont have a address?"})
