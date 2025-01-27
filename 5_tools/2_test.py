@@ -1,7 +1,7 @@
 from langchain_openai import ChatOpenAI
 from langchain_groq import ChatGroq
-from langchain.tools import StructuredTool
-from pydantic import BaseModel
+import os
+
 from langchain_core.tools import Tool
 from langchain.prompts import (
     ChatPromptTemplate,
@@ -21,22 +21,12 @@ def get_current_time(*args, **kwargs):
     now = datetime.datetime.now()  # Get current time
     return now.strftime("%I:%M %p") 
 
+def get_current_file_path(*args):
+    """
+    Returns the absolute path of the current file.
+    """
+    return os.path.abspath(__file__)
 
-def write_report(filename: str, html: str):
-    """Write an HTML report to disk."""
-    with open(filename, "w") as f:
-        f.write(html)
-        
-class WriteReportArgsSchema(BaseModel):
-    filename: str
-    html: str
-        
-write_report_tool = StructuredTool.from_function(
-    name="write_report",
-    description="Write an HTML file to disk. Use this tool whenever someone asks for a report.",
-    func=write_report,
-    args_schema=WriteReportArgsSchema
-)
 
 
 tools = [
@@ -45,7 +35,11 @@ tools = [
         func=get_current_time,
         description="Useful when you need to know the current time"
     ),
-    write_report_tool
+    Tool(
+        name="where_am_i",
+        func=get_current_file_path,
+        description="Useful when you need to know the current file path"
+    )
 ]
 prompt = ChatPromptTemplate.from_messages([
     ("system", "Answer the user's question with your tools"),
@@ -61,7 +55,7 @@ llm = ChatOpenAI(
 # Initialize the Language Model using Groq
 # temperature=0.7 provides a good balance between creativity and accuracy
 # llm = ChatGroq(
-#     model="llama3-8b-8192",
+#     model="llama-3.3-70b-versatile",
 #     temperature=0.7,
 # )
 
@@ -77,4 +71,4 @@ agent_executor = AgentExecutor(
     verbose=True,
 )
 
-agent_executor.invoke({"input": "What is the current time and write a report to disk?"})
+agent_executor.invoke({"input": "Where this file 2_test.py is located?"})
