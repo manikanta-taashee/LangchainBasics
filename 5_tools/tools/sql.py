@@ -1,6 +1,8 @@
 import sqlite3
 import os
 from langchain.tools import Tool
+from pydantic import BaseModel
+from typing import List
 
 # Define the persistent directory
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -20,12 +22,17 @@ def run_sqlite_query(query):
     cursor.execute(query)
     return cursor.fetchall()
 
+class RunQueryArgsSchema(BaseModel):
+    query: str
+
 
 run_query_tool = Tool.from_function(
     name="run_sqlite_query",
     description="Useful when you need to run a SQL query",
     func=run_sqlite_query,
+    args_schema=RunQueryArgsSchema,
 )
+
 
 def describe_tables(table_names):
     c = conn.cursor()
@@ -33,9 +40,14 @@ def describe_tables(table_names):
     rows = c.execute(f"SELECT sql FROM sqlite_master WHERE type='table' and name IN ({tables});")
     return '\n'.join(row[0] for row in rows if row[0] is not None)
 
+
+class DescribeTablesArgsSchema(BaseModel):
+    tables_names: List[str]
+
+
 describe_tables_tool = Tool.from_function(
     name="describe_tables",
     description="Given a list of table names, returns the schema of those tables",
     func=describe_tables,
+    args_schema=DescribeTablesArgsSchema
 )
-
