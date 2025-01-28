@@ -17,6 +17,8 @@ def list_tables():
     rows = cursor.fetchall()
     return "\n".join(row[0] for row in rows if row[0] is not None)
 
+print(list_tables())
+
 def run_sqlite_query(query):
     cursor = conn.cursor()
     cursor.execute(query)
@@ -39,7 +41,7 @@ def describe_tables(table_names):
     tables = ', '.join("'" + table + "'" for table in table_names)
     rows = c.execute(f"SELECT sql FROM sqlite_master WHERE type='table' and name IN ({tables});")
     return '\n'.join(row[0] for row in rows if row[0] is not None)
-
+# print(describe_tables(["users", "orders"]))
 
 class DescribeTablesArgsSchema(BaseModel):
     tables_names: List[str]
