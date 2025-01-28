@@ -13,6 +13,8 @@ from langchain.schema import SystemMessage
 from dotenv import load_dotenv
 from langchain.agents import  AgentExecutor,create_tool_calling_agent
 from tools.sql import run_query_tool, list_tables, describe_tables_tool
+from tools.report import write_report_tool
+
 load_dotenv()
 
 # llm = ChatOpenAI(
@@ -23,10 +25,14 @@ load_dotenv()
 
 # Initialize the Language Model using Groq
 # temperature=0.7 provides a good balance between creativity and accuracy
-llm = ChatGroq(
-    model="llama3-70b-8192",
-    temperature=0.7,
-    # model="mixtral-8x7b-32768"
+# llm = ChatGroq(
+#     model="llama3-70b-8192",
+#     temperature=0.7,
+#     # model="mixtral-8x7b-32768"
+# )
+llm = ChatOpenAI(
+    model="gpt-4o-mini",
+    # temperature=0,
 )
 
 tables = list_tables()
@@ -44,7 +50,9 @@ prompt = ChatPromptTemplate(
         MessagesPlaceholder(variable_name="agent_scratchpad")
     ]
 )
-tools = [run_query_tool, describe_tables_tool]
+tools = [run_query_tool, describe_tables_tool, write_report_tool]
+
+print(prompt)
 
 agent = create_tool_calling_agent(
     llm=llm,
@@ -52,10 +60,11 @@ agent = create_tool_calling_agent(
     prompt=prompt,
 )
 
-agent_executor = AgentExecutor(
+agent_executor = AgentExecutor.from_agent_and_tools(
     agent=agent,
     tools=tools,
     verbose=True,
 )
 
-agent_executor.invoke({"input": "How many users dont have a address?"})
+# agent_executor.invoke({"input": "Create a new user called 'John Doe' with email 'john.doe@example.com' and password 'password123'"})
+agent_executor.invoke({"input": "How many open orders are there"})
