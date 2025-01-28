@@ -11,7 +11,7 @@ from langchain.prompts import (
 from langchain.schema import SystemMessage
 
 from dotenv import load_dotenv
-from langchain.agents import  AgentExecutor,create_tool_calling_agent
+from langchain.agents import  AgentExecutor,create_tool_calling_agent, create_react_agent
 from tools.sql import run_query_tool, list_tables, describe_tables_tool
 from tools.report import write_report_tool
 
@@ -31,7 +31,7 @@ load_dotenv()
 #     # model="mixtral-8x7b-32768"
 # )
 llm = ChatOpenAI(
-    model="gpt-4o-mini",
+    model="gpt-4o",
     # temperature=0,
 )
 
@@ -44,7 +44,6 @@ prompt = ChatPromptTemplate(
             f"The database has tables of: {tables}\n"
             "Do no make any assumptions about what tables exist or what columns exist.\n"
             "If you need to describe a table, use the describe_tables tool.\n"
-            "If you need to run a SQL query, use the run_sqlite_query tool.\n"
         )),
         HumanMessagePromptTemplate.from_template("{input}"),
         MessagesPlaceholder(variable_name="agent_scratchpad")
@@ -67,4 +66,4 @@ agent_executor = AgentExecutor.from_agent_and_tools(
 )
 
 # agent_executor.invoke({"input": "Create a new user called 'John Doe' with email 'john.doe@example.com' and password 'password123'"})
-agent_executor.invoke({"input": "How many open orders are there"})
+agent_executor.invoke({"input": "Write a detailed report on the current status of ecommerce store . Show total number of products , users and orders"})
