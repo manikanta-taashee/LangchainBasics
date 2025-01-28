@@ -44,6 +44,7 @@ prompt = ChatPromptTemplate(
             f"The database has tables of: {tables}\n"
             "Do no make any assumptions about what tables exist or what columns exist.\n"
             "If you need to describe a table, use the describe_tables tool.\n"
+            "When asked to generate a report , use the write_report tool to generate a html report and write complete html markup not just tags."
         )),
         HumanMessagePromptTemplate.from_template("{input}"),
         MessagesPlaceholder(variable_name="agent_scratchpad")
