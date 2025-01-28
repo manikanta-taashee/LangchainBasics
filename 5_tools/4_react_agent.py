@@ -5,9 +5,12 @@ from langchain.memory import ConversationBufferMemory
 from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 from langchain_core.tools import Tool
 from langchain_openai import ChatOpenAI
+from langchain_community.tools import DuckDuckGoSearchRun
 
 # Load environment variables from .env file
 load_dotenv()
+search = DuckDuckGoSearchRun()
+
 
 def get_current_time(*args, **kwargs):
     """Returns the current time in H:MM AM/PM format."""
@@ -36,6 +39,12 @@ tools = [
         func=search_wikipedia,
         description="Useful for when you need to know information about a topic.",
     ),
+    Tool(
+        name="Search",
+        func=search.run,
+        description="Useful for when you need to know information about a topic.",
+    ),
+    
 ]
 
 prompt = hub.pull("hwchase17/react")
@@ -52,7 +61,7 @@ agent = create_react_agent(
     # stop_sequences=True
 )
 
-agent_executor = AgentExecutor.from_agent_and_tools(agent=agent, tools=tools, verbose=True)
+agent_executor = AgentExecutor.from_agent_and_tools(agent=agent, tools=tools, verbose=True, handle_parsing_errors=True)
 
-response = agent_executor.invoke({"input": "What is the current time?"})
+response = agent_executor.invoke({"input": "What is the weather in bengaluru?"})
 print(response)
